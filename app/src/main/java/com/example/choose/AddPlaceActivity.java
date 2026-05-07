@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.hawkar6.myfavoriteplaces.databinding.ActivityAddPlaceBinding;
+import com.example.choose.databinding.ActivityAddPlaceBinding;
 
 /**
  * AddPlaceActivity:

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.hawkar6.myfavoriteplaces.databinding.ActivityMainBinding;
+import com.example.choose.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;

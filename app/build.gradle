@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hawkar6.myfavoriteplaces'
+    namespace 'com.example.choose'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.hawkar6.myfavoriteplaces"
+        applicationId "com.example.choose"
         minSdk 24
         targetSdk 34
         versionCode 1
