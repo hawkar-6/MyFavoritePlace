@@ -1,9 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Choose" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.Choose" parent="Base.Theme.Choose" />
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 theme (no action bar) -->
+    <style name="Theme.MyFavoritePlaces" parent="Theme.Material3.DayNight.NoActionBar" />
 </resources>
