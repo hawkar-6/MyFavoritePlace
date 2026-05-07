@@ -20,31 +20,31 @@
             app:titleTextColor="@android:color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
+        <FrameLayout
+            android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerPlaces"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
             android:padding="8dp"
             android:paddingBottom="88dp"
-            tools:listitem="@layout/item_place" />
+                tools:listitem="@layout/item_place" />
 
-        <LinearLayout
+            <LinearLayout
             android:id="@+id/emptyState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical"
+                android:gravity="center"
+                android:orientation="vertical"
             android:padding="24dp"
             android:visibility="gone">
 
-            <ImageView
+                <ImageView
                 android:id="@+id/emptyStateIcon"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
@@ -52,27 +52,27 @@
                 android:tint="@color/gray_400"
                 app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
-            <TextView
+                <TextView
                 android:id="@+id/emptyStateTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="No favorite places yet!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="No favorite places yet!"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
+                <TextView
                 android:id="@+id/emptyStateSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:text="Tap the + button to add your first place."
+                    android:text="Tap the + button to add your first place."
                 android:textColor="@color/gray_600"
                 android:textSize="14sp" />
-        </LinearLayout>
-    </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddPlace"
