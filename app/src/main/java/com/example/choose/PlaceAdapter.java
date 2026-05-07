@@ -1,19 +1,19 @@
 package com.example.choose;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.google.android.material.button.MaterialButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.hawkar6.myfavoriteplaces.databinding.ItemPlaceBinding;
 
 import java.util.List;
 
-/**
- * RecyclerView Adapter using View Binding.
- */
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
 
     public interface OnPlaceDeleteListener {
@@ -31,30 +31,27 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     @NonNull
     @Override
     public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemPlaceBinding binding = ItemPlaceBinding.inflate(
-                LayoutInflater.from(parent.getContext()),
-                parent,
-                false
-        );
-        return new PlaceViewHolder(binding);
+        // لێرە فایلی item_place بانگ دەکەین کە پێشتر دروستت کردووە
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_place, parent, false);
+        return new PlaceViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlaceViewHolder holder, int position) {
         Place place = places.get(position);
 
-        // Bind title + coordinates
-        holder.binding.txtTitle.setText(place.getTitle());
-        holder.binding.txtCoords.setText("Lat: " + place.getLatitude() + "  Lng: " + place.getLongitude());
+        holder.txtTitle.setText(place.getTitle());
+        holder.txtCoords.setText("Lat: " + place.getLatitude() + "  Lng: " + place.getLongitude());
 
-        // Load image (supports content:// uris)
-        Glide.with(holder.binding.imgThumb.getContext())
+        // بارکردنی وێنە بە بەکارهێنانی Glide
+        Glide.with(holder.itemView.getContext())
                 .load(place.getImagePath())
                 .centerCrop()
-                .into(holder.binding.imgThumb);
+                .placeholder(android.R.drawable.ic_menu_gallery)
+                .into(holder.imgThumb);
 
-        // Delete action
-        holder.binding.btnDelete.setOnClickListener(v -> deleteListener.onDelete(place));
+        // دوگمەی سڕینەوە
+        holder.btnDelete.setOnClickListener(v -> deleteListener.onDelete(place));
     }
 
     @Override
@@ -63,11 +60,16 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     }
 
     static class PlaceViewHolder extends RecyclerView.ViewHolder {
-        final ItemPlaceBinding binding;
+        TextView txtTitle, txtCoords;
+        ImageView imgThumb;
+        MaterialButton btnDelete;
 
-        PlaceViewHolder(ItemPlaceBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
+        PlaceViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtCoords = itemView.findViewById(R.id.txtCoords);
+            imgThumb = itemView.findViewById(R.id.imgThumb);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 }

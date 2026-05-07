@@ -3,7 +3,7 @@ package com.example.choose;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-
+import com.example.choose.R;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;

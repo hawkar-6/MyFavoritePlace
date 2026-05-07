@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  AndroidManifest.xml
-  Package: com.hawkar6.myfavoriteplaces
-  Includes permissions + Google Maps API key placeholder.
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hawkar6.myfavoriteplaces">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permissions (requested at runtime as needed) -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -20,14 +13,21 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round">
 
-        <!-- Google Maps API Key (replace with your real key) -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_GOOGLE_MAPS_API_KEY_HERE" />
 
-        <activity android:name=".MapActivity" />
-        <activity android:name=".AddPlaceActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AddPlaceActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
