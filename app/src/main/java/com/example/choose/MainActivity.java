@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements PlaceAdapter.OnPl
         places.addAll(db.getAllPlaces());
         adapter.notifyDataSetChanged();
 
-        binding.txtEmpty.setVisibility(places.isEmpty() ? View.VISIBLE : View.GONE);
+        binding.emptyState.setVisibility(places.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     @Override
